@@ -19,3 +19,16 @@ The cleaned dataset used for this project is **`creditcard_cleaned.csv`**, creat
 ## 🚀 How to Use
 
 You can open and run these notebooks directly in Google Colab:
+## 🚀 How to Use
+
+You can open and run these notebooks directly in Google Colab:
+
+### 🧹 1. Data Preparation
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/megha-dro/Intelligent-Pipeline-Real-Time-Fraud-Detection/blob/main/_data_prepration.ipynb)
+
+### 🔍 2. Exploratory Data Analysis (EDA)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/megha-dro/Intelligent-Pipeline-Real-Time-Fraud-Detection/blob/main/_EDA.ipynb)
+
+### 🧠 3. Model Training and Evaluation
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/megha-dro/Intelligent-Pipeline-Real-Time-Fraud-Detection/blob/main/_model_training.ipynb)
+
