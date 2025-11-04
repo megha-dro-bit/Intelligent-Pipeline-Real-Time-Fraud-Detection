@@ -16,12 +16,18 @@ The cleaned dataset used for this project is **`creditcard_cleaned.csv`**, creat
 - **Rows:** 284,807  
 - **Columns:** 31  
 - **Target column:** `Class` (0 = Genuine, 1 = Fraud)
+## 🚀 How to Use
 
-### 📘 How to Use
-If you want to reproduce the cleaned data:
-1. Run the notebook **`1_data_preparation.ipynb`**  
-2. The notebook will automatically generate `creditcard_cleaned.csv` in the project folder.  
-3. This file is then used in **`3_model_training.ipynb`** for model fitting and evaluation.
+You can open and run these notebooks directly in Google Colab:
+
+### 🧹 1. Data Preparation
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/megha-dro/Intelligent-Pipeline-Real-Time-Fraud-Detection/blob/main/_data_prepration.ipynb)
+
+### 🔍 2. Exploratory Data Analysis (EDA)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/megha-dro/Intelligent-Pipeline-Real-Time-Fraud-Detection/blob/main/_EDA.ipynb)
+
+### 🧠 3. Model Training and Evaluation
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/megha-dro/Intelligent-Pipeline-Real-Time-Fraud-Detection/blob/main/_model_training.ipynb)
 
 ---
 
