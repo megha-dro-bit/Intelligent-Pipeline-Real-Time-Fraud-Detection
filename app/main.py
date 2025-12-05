@@ -1,4 +1,6 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
+from fastapi.templating import Jinja2Templates
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 import joblib
 import json
@@ -8,15 +10,23 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
+# CORS (optional)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
-# ----------------------------
+
+# ===========================
+# TEMPLATES + STATIC FILES
+# ===========================
+templates = Jinja2Templates(directory="app/templates")
+app.mount("/static", StaticFiles(directory="app/static"), name="static")
+
+# ===========================
 # 1. Pydantic Model
-# ----------------------------
+# ===========================
 class PredictionForm(BaseModel):
     Time: float
     V1: float
@@ -49,10 +59,9 @@ class PredictionForm(BaseModel):
     V28: float
     Amount: float
 
-
-# ----------------------------
+# ===========================
 # 2. Load Model + Scaler + Features
-# ----------------------------
+# ===========================
 BASE_PATH = os.path.dirname(os.path.abspath(__file__))
 
 model = joblib.load(os.path.join(BASE_PATH, "models", "model.pkl"))
@@ -61,29 +70,23 @@ scaler = joblib.load(os.path.join(BASE_PATH, "models", "scaler.pkl"))
 with open(os.path.join(BASE_PATH, "models", "features.json"), "r") as f:
     feature_names = json.load(f)
 
-
-# ----------------------------
+# ===========================
 # 3. Routes
-# ----------------------------
+# ===========================
 @app.get("/")
-def home():
-    return {"message": "Fraud Detection API is running!"}
-
+def home(request: Request):
+    return templates.TemplateResponse("index.html", {"request": request})
 
 @app.post("/predict")
 def predict(data: PredictionForm):
-
     input_list = [getattr(data, feat) for feat in feature_names]
     input_array = np.array(input_list).reshape(1, -1)
     scaled_input = scaler.transform(input_array)
     prediction = model.predict(scaled_input)[0]
-
     return {"prediction": int(prediction)}
-
 
 @app.post("/predict_form")
 def predict_form(data: PredictionForm):
-
     input_list = [getattr(data, feat) for feat in feature_names]
     input_array = np.array(input_list).reshape(1, -1)
     scaled_input = scaler.transform(input_array)
@@ -93,3 +96,8 @@ def predict_form(data: PredictionForm):
         "prediction": int(prediction),
         "meaning": "1 = Fraud, 0 = Not Fraud"
     }
+
+
+   
+
+
