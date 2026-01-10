@@ -21,7 +21,8 @@ Explore streaming architecture concepts used in modern data engineering pipeline
 ### Dataset
 
 The dataset used in this project is the Credit Card Fraud Detection dataset, publicly available on Kaggle.
-It contains anonymized credit card transactions made by European cardholders.
+ Dataset Link: https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud  
+ It contains **284,808 credit card transactions with 31 features**
 
 Key characteristics:
 
@@ -32,6 +33,37 @@ Features are anonymized due to confidentiality
 Suitable for academic research on fraud detection and anomaly detection
 
 The dataset was used strictly for educational and research purposes.
+#### Tools & Technologies
+
+### Programming Language
+- Python
+
+### Data Analysis & Processing
+- Pandas – data loading, preprocessing, and transformation
+- NumPy – numerical computations
+
+### Data Visualization
+- Matplotlib
+- Seaborn
+
+### Machine Learning
+- Scikit-learn  
+  - Logistic Regression  
+  - Random Forest Classifier  
+  - Model evaluation metrics (precision, recall, F1-score, confusion matrix)
+
+### Development Environment
+- Jupyter Notebook
+- Google Colab
+
+### Version Control
+- Git
+- GitHub
+
+### Streaming Concepts (Exploratory)
+- Apache Kafka  
+  - Producer–consumer scripts for simulating real-time transaction flow
+
 ### Methodology
 1.## Data Preparation
 
