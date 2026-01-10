@@ -153,7 +153,7 @@ This project provides a comprehensive learning experience in fraud detection, co
 ### Author
 
 Megha Agnihotri
-B.Sc. IT Graduate
+(B.Sc. IT Graduate)
 Aspiring Data Scientist
 
 
